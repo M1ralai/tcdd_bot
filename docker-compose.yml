@@ -1,0 +1,9 @@
+services:
+  tcdd-bot:
+    build: .
+    image: tcdd-bot:latest
+    container_name: tcdd-bot
+    command: ["python", "-u", "bot/tcdd_bot.py"]
+    env_file:
+      - .env
+    restart: unless-stopped
